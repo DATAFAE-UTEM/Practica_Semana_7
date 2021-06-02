@@ -35,17 +35,22 @@ setwd(my_dir)
 
 for (file in files){
 
+  # Nombre de archivo
   Archivo = file
 
+  # Estructura de Corpus
   corp = Corpus(URISource(file, encoding = "latin1"),
-                   readerControl = list(reader = readPDF, language = "es-419"))
+                readerControl = list(reader = readPDF, language = "es-419"))
 
+  # Transformación del texto
   pngfile = pdftools::pdf_convert(file, dpi = 600)
   Texto = tesseract::ocr(pngfile)
   cat(Texto)
 
+  # Extracción de fecha
   Fecha = corp[[ file ]][["meta"]][["datetimestamp"]]
 
+  # Construccion Dataset
   Data_text <- rbind(Data_text, data.frame(Archivo, Fecha, Texto))
 }
 
