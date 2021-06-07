@@ -75,4 +75,6 @@ for (file in files){
 
 write.csv2(Data_text, "C:\\Users\\marti\\OneDrive\\Desktop\\Datas\\Data Profe Diana\\Data_text.csv" )
 
+Text <- read.csv2("C:\\Users\\marti\\OneDrive\\Desktop\\Datas\\Data Profe Diana\\Data_text.csv")
+
 
