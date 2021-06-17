@@ -7,7 +7,7 @@ library(tm)
 library(ggplot2)
 
 # Ruta con PDFs
-my_dir <- "C:\\Users\\panch\\Desktop\\python\\pdf"
+my_dir <- "/directorio/"
 
 # se pasan los pdf a una lista
 files <- list.files(path = my_dir, pattern = "pdf$")
